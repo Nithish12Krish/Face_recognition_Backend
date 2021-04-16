@@ -7,6 +7,7 @@ const register=require('./Controllers/register');
 const signin=require('./Controllers/signin');
 const profile=require('./Controllers/getprofile');
 const image=require('./Controllers/image');
+
 const db = knex({
   // Enter your own database information here based on what you created
   client: 'pg',
@@ -21,7 +22,7 @@ const db = knex({
 const app = express();
 
 app.use(cors())
-app.use(express.json());
+app.use(express.json())
 app.get('/', (req, res)=> {
   res.send(database.users);
 })
